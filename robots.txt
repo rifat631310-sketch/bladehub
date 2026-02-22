@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rifat631310-sketch.github.io/bladehub/sitemap.xml
