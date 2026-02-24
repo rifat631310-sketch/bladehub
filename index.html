@@ -446,6 +446,12 @@ const searchInput = document.getElementById("searchInput");
 const cards = document.querySelectorAll(".card");
 const topbar = document.querySelector(".topbar");
 
+function slugify(text){
+  return text.toLowerCase().replace(/\s+/g, "-").replace(/[^\w\-]+/g, "");
+}
+
+/* ================= MENU ================= */
+
 menuBtn.addEventListener("click", () => {
   menu.style.display = (menu.style.display === "block") ? "none" : "block";
 });
@@ -467,6 +473,8 @@ function filterCategory(cat){
   menu.style.display="none";
 }
 
+/* ================= SEARCH ================= */
+
 searchInput.addEventListener("input", ()=>{
   const q = searchInput.value.toLowerCase().trim();
   cards.forEach(card=>{
@@ -474,6 +482,8 @@ searchInput.addEventListener("input", ()=>{
     card.style.display = title.includes(q) ? "block" : "none";
   });
 });
+
+/* ================= PRODUCT OPEN ================= */
 
 function openProduct(name, price, desc, img1, img2, img3, img4){
   popup.style.display="block";
@@ -491,23 +501,64 @@ function openProduct(name, price, desc, img1, img2, img3, img4){
   t4.src=img4;
 
   waBtn.href="https://wa.me/8801908631310?text=I want to order "+encodeURIComponent(name+" ("+price+")");
-  history.pushState({popup:true},"");
+
+  const slug = slugify(name);
+  history.pushState({product: slug}, "", "?product=" + slug);
 }
+
+/* ================= CLOSE PRODUCT ================= */
+
+function closePopup(){
+  popup.style.display="none";
+  topbar.classList.remove("hide-ui");
+  menu.classList.remove("hide-ui");
+  history.pushState({}, "", window.location.pathname);
+}
+
+popup.addEventListener("click", function(e){
+  if(e.target === popup){
+    closePopup();
+  }
+});
+
+/* ================= IMAGE CHANGE ================= */
 
 function changeImage(src){
   mainImage.src=src;
 }
 
-window.addEventListener("popstate", function(event){
-  if(popup.style.display==="block"){
+/* ================= BACK BUTTON FIX ================= */
+
+window.addEventListener("popstate", function(){
+  if(window.location.search.includes("product=")){
+    loadProductFromURL();
+  }else{
     popup.style.display="none";
     topbar.classList.remove("hide-ui");
     menu.classList.remove("hide-ui");
   }
 });
 
-let selectedStar = 0;
+/* ================= AUTO LOAD PRODUCT FROM URL ================= */
 
+function loadProductFromURL(){
+  const params = new URLSearchParams(window.location.search);
+  const productSlug = params.get("product");
+  if(!productSlug) return;
+
+  cards.forEach(card=>{
+    const title = card.querySelector(".info").childNodes[0].nodeValue.trim();
+    if(slugify(title) === productSlug){
+      card.click();
+    }
+  });
+}
+
+window.addEventListener("load", loadProductFromURL);
+
+/* ================= REVIEWS ================= */
+
+let selectedStar = 0;
 const stars = document.querySelectorAll("#starBox span");
 
 stars.forEach(star=>{
