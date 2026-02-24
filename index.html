@@ -1,132 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BLADE HUB | Premium Pocket Knives</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
-body{background:#0b0d10;color:#fff;overflow-x:hidden;}
-.hide-ui{display:none !important;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#0b0d10;color:#fff;overflow-x:hidden}
+.hide-ui{display:none!important}
 
-header{
-  background:linear-gradient(135deg,#111827,#000);
-  padding:15px 10px;
-  text-align:center;
-  overflow:hidden;
-  position:relative;
-  padding-top:26px;
-}
+header{background:linear-gradient(135deg,#111827,#000);padding:15px 10px;text-align:center;position:relative;padding-top:26px}
+.topbar{position:absolute;top:9px;left:10px;right:10px;display:flex;justify-content:space-between;z-index:10}
+.menu-btn{width:40px;height:35px;border-radius:10px;background:rgba(0,0,0,.55);border:2px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.menu-btn span{width:25px;height:2px;background:#fff;position:relative;display:block}
+.menu-btn span:before,.menu-btn span:after{content:"";position:absolute;left:0;width:25px;height:2px;background:#fff}
+.menu-btn span:before{top:-6px}
+.menu-btn span:after{top:6px}
+.search-input{height:35px;width:130px;background:rgba(0,0,0,.55);border:2px solid rgba(255,255,255,.3);border-radius:10px;color:#fff;padding:0 10px}
+.menu{position:absolute;top:10px;left:11px;width:150px;background:#fff;border-radius:10px;display:none;box-shadow:0 10px 30px rgba(0,0,0,.55);z-index:100}
+.menu a{display:block;padding:8px;color:#000;text-decoration:none;border-bottom:1px solid #eee}
+.menu a:last-child{border:none}
+.menu a:hover{background:#f2f2f2}
+.logo{max-height:200px;margin:auto;display:block;padding-top:25px}
 
-.topbar{
-  position:absolute;
-  top:9px;
-  left:10px;
-  right:10px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  z-index:9999;
-}
+.hero{text-align:center;padding:20px}
+.products{padding:10px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:992px){.products{grid-template-columns:repeat(4,1fr)}}
+.card{background:#111827;border-radius:10px;overflow:hidden;cursor:pointer;transition:.3s}
+.card:hover{transform:translateY(-5px)}
+.card img{width:100%;aspect-ratio:1/1;object-fit:contain;background:#000}
+.card .info{padding:6px;font-size:13px}
+.price{color:#eab308;font-weight:bold;margin-top:3px}
 
-.menu-btn{
-  width:40px;height:35px;border-radius:10px;
-  background:rgba(0,0,0,0.55);
-  border:2px solid rgba(255,255,255,0.3);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;flex-shrink:0;
-}
-.menu-btn span{
-  width:25px;height:1.5px;background:#fff;position:relative;display:block;
-}
-.menu-btn span:before,.menu-btn span:after{
-  content:"";position:absolute;left:0;width:25px;height:1.5px;background:#fff;
-}
-.menu-btn span:before{top:-5px;}
-.menu-btn span:after{top:5px;}
-
-.search-input{
-  height:35px;width:130px;max-width:70vw;
-  background:rgba(0,0,0,0.55);
-  border:2px solid rgba(255,255,255,0.3);
-  border-radius:10px;color:#fff;padding:0 10px;outline:none;font-size:15px;
-}
-.search-input::placeholder{color:#fff;opacity:1;}
-
-.menu{
-  position:absolute;top:10px;left:11px;width:140px;
-  background:#ffffff;border-radius:10px;overflow:auto;
-  display:none;box-shadow:0 10px 30px rgba(0,0,0,0.55);
-  z-index:99999;max-height:240px;
-}
-.menu a{
-  display:block;padding:7px 7px;color:#0b0d10;
-  text-decoration:none;font-size:14px;
-  border-bottom:1px solid rgba(0,0,0,0.12);
-}
-.menu a:last-child{border-bottom:none;}
-.menu a:hover{background:rgba(17,24,39,0.08);}
-
-.logo{
-  max-height:250px;max-width:100%;display:block;margin:0 auto;
-  object-fit:contain;padding-top:25px;
-}
-
-.hero{text-align:center;padding:20px 15px;}
-.hero h2{font-size:20px;margin-bottom:5px;}
-.hero p{font-size:12px;margin-top:5px;color:#ccc;}
-
-.products{
-  padding:10px;display:grid;
-  grid-template-columns:repeat(2,1fr);gap:6px;
-}
-@media (min-width:992px){
-  .products{grid-template-columns:repeat(4,1fr);gap:15px;}
-}
-
-.card{
-  background:#111827;border-radius:10px;
-  overflow:hidden;cursor:pointer;transition:0.3s;
-}
-.card:hover{transform:translateY(-5px);}
-.card img{
-  width:100%;aspect-ratio:1/1;object-fit:contain;
-  background:#0b0d10;display:block;padding:3px;
-}
-.card .info{padding:5px 7px;font-size:13px;line-height:1.2;}
-.price{color:#eab308;font-size:16px;font-weight:bold;margin:3px 0 0 0;}
-
-.popup{
-  display:none;position:fixed;top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.95);
-  padding:20px;overflow:auto;z-index:1000;
-}
-.popup-content{max-width:500px;margin:auto;}
-.main-img{
-  width:100%;aspect-ratio:1/1;object-fit:contain;
-  background:#000;border-radius:8px;margin-bottom:10px;
-}
-.thumb{display:flex;gap:8px;margin-bottom:10px;}
-.thumb img{
-  width:23%;aspect-ratio:1/1;
-  object-fit:cover;border-radius:5px;cursor:pointer;
-}
-
-.whatsapp{
-  display:block;width:fit-content;
-  background:#25d366;padding:10px 22px;
-  border-radius:25px;color:#fff;
-  text-decoration:none;font-size:15px;
-  margin:6px 0 10px 0;
-}
-
-footer{
-  text-align:center;padding:15px;
-  background:#000;font-size:13px;color:#aaa;
-}
+.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;padding:20px;overflow:auto;z-index:1000}
+.popup-content{max-width:500px;margin:auto}
+.main-img{width:100%;aspect-ratio:1/1;object-fit:contain;background:#111;border-radius:8px;margin-bottom:10px}
+.thumb{display:flex;gap:6px;margin-bottom:10px}
+.thumb img{width:23%;aspect-ratio:1/1;object-fit:cover;border-radius:5px;cursor:pointer}
+.whatsapp{display:inline-block;background:#25d366;padding:10px 20px;border-radius:25px;color:#fff;text-decoration:none;margin:10px 0}
+footer{text-align:center;padding:15px;background:#000;color:#aaa;font-size:13px}
 </style>
 </head>
 
@@ -134,6 +47,102 @@ footer{
 
 <header>
 <div class="topbar">
+<div class="menu-btn" id="menuBtn"><span></span></div>
+<input class="search-input" id="searchInput" placeholder="Search knives...">
+</div>
+
+<div class="menu" id="menu">
+<a href="#" onclick="filterCategory('all')">Show All</a>
+<a href="#" onclick="filterCategory('folding')">Folding</a>
+<a href="#" onclick="filterCategory('otf')">OTF</a>
+<a href="#" onclick="filterCategory('switchable')">Switchable</a>
+<a href="#" onclick="filterCategory('fixed')">Fixed</a>
+</div>
+
+<img src="logo.png" class="logo">
+</header>
+
+<section class="hero">
+<h2>Your Trusted Source For Premium Folding Knives In Bangladesh</h2>
+<p>Tap any knife to see more photos</p>
+</section>
+
+<section class="products" id="products"></section>
+
+<div class="popup" id="popup">
+<div class="popup-content">
+<h2 id="productName"></h2>
+<img id="mainImage" class="main-img">
+<div class="thumb">
+<img id="t1"><img id="t2"><img id="t3"><img id="t4">
+</div>
+<div id="productPrice" class="price"></div>
+<a id="waBtn" class="whatsapp" target="_blank">Order on WhatsApp</a>
+<p id="productDesc" style="white-space:pre-line;color:#ccc"></p>
+</div>
+</div>
+
+<footer>BLADE HUB | WhatsApp: 01908631310</footer>
+
+<script>
+const productsData = [
+{slug:"browning-1",name:"Browning Folding Knife",price:"৳ 1,150",category:"folding",images:["browning main.png","browning 2.png","browning 3.png","browning 4.png"],desc:"Premium folding knife"},
+{slug:"browning-2",name:"Browning Folding Knife v2",price:"৳ 1,550",category:"folding",images:["v2 main.png","v2 2.png","v2 3.png","v2 4.png"],desc:"Premium folding knife"},
+{slug:"d2-1",name:"D2 Steel Folding Knife",price:"৳ 2,350",category:"folding",images:["d2 p main.png","d2 p 2.png","d2 p 3.png","d2 p 4.png"],desc:"D2 Steel blade"},
+{slug:"lightweight",name:"Lightweight Folding Knife",price:"৳ 780",category:"folding",images:["lightweight folding knife main.png","lightweight folding knife 2.png","lightweight folding knife 3.png","lightweight folding knife 4.png"],desc:"Lightweight model"},
+{slug:"italian",name:"Italian Folding Knife",price:"৳ 1,350",category:"folding",images:["italian folding knife main.png","italian folding knife 2.png","italian folding knife 3.png","italian folding knife 4.png"],desc:"Italian style"},
+{slug:"scorpion",name:"Scorpion Folding Knife",price:"৳ 1,850",category:"folding",images:["scorpion folding knife main.png","scorpion folding knife 2.png","scorpion folding knife 3.png","scorpion folding knife 4.png"],desc:"Heavy duty"},
+{slug:"skull-otf",name:"Skull Printed OTF Knife",price:"৳ 950",category:"otf",images:["otf c main.png","otf c 2.png","otf c 3.png","otf c 4.png"],desc:"OTF knife"},
+{slug:"d2-2",name:"D2 Steel Folding Knife",price:"৳ 1,950",category:"folding",images:["d2 cp main.png","d2 cp 2.png","d2 cp 3.png","d2 cp 4.png"],desc:"D2 blade"},
+{slug:"ak47",name:"AK 47 Switchable Knife",price:"৳ 950",category:"switchable",images:["c ak47 main.png","c ak47 2.png","c ak47 3.png","c ak47 4.png"],desc:"Switchable"},
+{slug:"premium-otf",name:"Premium OTF Knife",price:"৳ 1,350",category:"otf",images:["otf knife main.png","otf knife 2.png","otf knife 3.png","otf knife 4.png"],desc:"Premium OTF"},
+{slug:"buck",name:"Buck Folding Knife",price:"৳ 1,750",category:"folding",images:["buck folding knife main.png","buck folding knife 2.png","buck folding knife 3.png","buck folding knife 4.png"],desc:"Buck style"},
+{slug:"kalashnikov",name:"Kalashnikov Folding Knife",price:"৳ 1,450",category:"folding",images:["Kalashnikov main.png","Kalashnikov 2.png","Kalashnikov 3.png","Kalashnikov 4.png"],desc:"Kalashnikov"},
+{slug:"kukri",name:"Premium Nepali Kukri",price:"৳ 3,650",category:"fixed",images:["1kukri main.jpg","1kukri 2.jpg","1kukri 3.jpg","1kukri 4.jpg"],desc:"Kukri"},
+{slug:"fixed",name:"Fixed Blade Knife",price:"৳ 850",category:"fixed",images:["fixed blade knife main.png","fixed blade knife 2.png","fixed blade knife 3.png","fixed blade knife 4.png"],desc:"Fixed blade"},
+{slug:"m9",name:"M9 Bayonet Knife",price:"৳ 3,550",category:"fixed",images:["m9 bayonet main.jpg","m9 bayonet 2.jpg","m9 bayonet 3.jpg","m9 bayonet 4.jpg"],desc:"M9 Bayonet"}
+];
+
+const container=document.getElementById("products");
+
+productsData.forEach(p=>{
+container.innerHTML+=`
+<div class="card" data-category="${p.category}" onclick="openProduct('${p.slug}')">
+<img src="${p.images[0]}">
+<div class="info">${p.name}<div class="price">${p.price}</div></div>
+</div>`;
+});
+
+function openProduct(slug){
+const p=productsData.find(x=>x.slug===slug);
+if(!p)return;
+document.getElementById("popup").style.display="block";
+document.getElementById("productName").innerText=p.name;
+document.getElementById("productPrice").innerText=p.price;
+document.getElementById("productDesc").innerText=p.desc;
+document.getElementById("mainImage").src=p.images[0];
+document.getElementById("t1").src=p.images[0];
+document.getElementById("t2").src=p.images[1];
+document.getElementById("t3").src=p.images[2];
+document.getElementById("t4").src=p.images[3];
+document.getElementById("waBtn").href="https://wa.me/8801908631310?text=I want to order "+encodeURIComponent(p.name);
+history.pushState({}, "", "?product="+slug);
+}
+
+function filterCategory(cat){
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display=(cat==="all"||card.dataset.category===cat)?"block":"none";
+});
+}
+
+window.onload=function(){
+const slug=new URLSearchParams(window.location.search).get("product");
+if(slug)openProduct(slug);
+}
+</script>
+
+</body>
+</html><div class="topbar">
 <div class="menu-btn" id="menuBtn"><span></span></div>
 <input class="search-input" id="searchInput" type="text" placeholder="Search knives...">
 </div>
