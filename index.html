@@ -8,7 +8,6 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
 body{background:#0b0d10;color:#fff;overflow-x:hidden;}
-
 .hide-ui{display:none !important;}
 
 header{
@@ -33,72 +32,384 @@ header{
 }
 
 .menu-btn{
-  width:40px;
-  height:35px;
-  border-radius:10px;
+  width:40px;height:35px;border-radius:10px;
   background:rgba(0,0,0,0.55);
   border:2px solid rgba(255,255,255,0.3);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;flex-shrink:0;
 }
 .menu-btn span{
-  width:25px;
-  height:1.5px;
-  background:#fff;
-  position:relative;
-  display:block;
+  width:25px;height:1.5px;background:#fff;position:relative;display:block;
 }
-.menu-btn span:before,
-.menu-btn span:after{
-  content:"";
-  position:absolute;
-  left:0;
-  width:25px;
-  height:1.5px;
-  background:#fff;
+.menu-btn span:before,.menu-btn span:after{
+  content:"";position:absolute;left:0;width:25px;height:1.5px;background:#fff;
 }
 .menu-btn span:before{top:-5px;}
 .menu-btn span:after{top:5px;}
 
 .search-input{
-  height:35px;
-  width:130px;
-  max-width:70vw;
+  height:35px;width:130px;max-width:70vw;
   background:rgba(0,0,0,0.55);
   border:2px solid rgba(255,255,255,0.3);
-  border-radius:10px;
-  color:#fff;
-  padding:0 10px;
-  outline:none;
-  font-size:15px;
+  border-radius:10px;color:#fff;padding:0 10px;outline:none;font-size:15px;
 }
 .search-input::placeholder{color:#fff;opacity:1;}
 
 .menu{
-  position:absolute;
-  top:10px;
-  left:11px;
-  width:140px;
-  background:#ffffff;
-  border-radius:10px;
-  overflow:auto;
-  display:none;
-  box-shadow:0 10px 30px rgba(0,0,0,0.55);
-  z-index:99999;
-  max-height:240px;
+  position:absolute;top:10px;left:11px;width:140px;
+  background:#ffffff;border-radius:10px;overflow:auto;
+  display:none;box-shadow:0 10px 30px rgba(0,0,0,0.55);
+  z-index:99999;max-height:240px;
 }
-
 .menu a{
-  display:block;
-  padding:7px 7px;
-  color:#0b0d10;
-  text-decoration:none;
-  font-size:14px;
+  display:block;padding:7px 7px;color:#0b0d10;
+  text-decoration:none;font-size:14px;
   border-bottom:1px solid rgba(0,0,0,0.12);
 }
+.menu a:last-child{border-bottom:none;}
+.menu a:hover{background:rgba(17,24,39,0.08);}
+
+.logo{
+  max-height:250px;max-width:100%;display:block;margin:0 auto;
+  object-fit:contain;padding-top:25px;
+}
+
+.hero{text-align:center;padding:20px 15px;}
+.hero h2{font-size:20px;margin-bottom:5px;}
+.hero p{font-size:12px;margin-top:5px;color:#ccc;}
+
+.products{
+  padding:10px;display:grid;
+  grid-template-columns:repeat(2,1fr);gap:6px;
+}
+@media (min-width:992px){
+  .products{grid-template-columns:repeat(4,1fr);gap:15px;}
+}
+
+.card{
+  background:#111827;border-radius:10px;
+  overflow:hidden;cursor:pointer;transition:0.3s;
+}
+.card:hover{transform:translateY(-5px);}
+.card img{
+  width:100%;aspect-ratio:1/1;object-fit:contain;
+  background:#0b0d10;display:block;padding:3px;
+}
+.card .info{padding:5px 7px;font-size:13px;line-height:1.2;}
+.price{color:#eab308;font-size:16px;font-weight:bold;margin:3px 0 0 0;}
+
+.popup{
+  display:none;position:fixed;top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.95);
+  padding:20px;overflow:auto;z-index:1000;
+}
+.popup-content{max-width:500px;margin:auto;}
+.main-img{
+  width:100%;aspect-ratio:1/1;object-fit:contain;
+  background:#000;border-radius:8px;margin-bottom:10px;
+}
+.thumb{display:flex;gap:8px;margin-bottom:10px;}
+.thumb img{
+  width:23%;aspect-ratio:1/1;
+  object-fit:cover;border-radius:5px;cursor:pointer;
+}
+
+.whatsapp{
+  display:block;width:fit-content;
+  background:#25d366;padding:10px 22px;
+  border-radius:25px;color:#fff;
+  text-decoration:none;font-size:15px;
+  margin:6px 0 10px 0;
+}
+
+footer{
+  text-align:center;padding:15px;
+  background:#000;font-size:13px;color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="topbar">
+<div class="menu-btn" id="menuBtn"><span></span></div>
+<input class="search-input" id="searchInput" type="text" placeholder="Search knives...">
+</div>
+
+<div class="menu" id="menu">
+<a href="#" onclick="filterCategory('otf');return false;">OTF Knife</a>
+<a href="#" onclick="filterCategory('folding');return false;">Folding knife</a>
+<a href="#" onclick="filterCategory('switchable');return false;">Switchable Knife</a>
+<a href="#" onclick="filterCategory('fixed');return false;">Fixed Blade Knife</a>
+<a href="#" onclick="filterCategory('all');return false;">Show All</a>
+</div>
+
+<img src="logo.png" class="logo">
+</header>
+
+<section class="hero">
+<h2>Your Trusted Source For Premium Folding Knives In Bangladesh</h2>
+<p>Tap any knife to see more photos</p>
+</section>
+
+<section class="products" id="products"></section>
+
+<div id="popup" class="popup">
+<div class="popup-content">
+<h2 id="productName"></h2>
+<img id="mainImage" class="main-img">
+<div class="thumb">
+<img id="t1"><img id="t2"><img id="t3"><img id="t4">
+</div>
+<div id="productPrice" class="price"></div>
+<a id="waBtn" class="whatsapp" target="_blank">Order on WhatsApp</a>
+<p id="productDesc" style="white-space:pre-line;color:#ccc;font-size:14px;"></p>
+</div>
+</div>
+
+<footer>BLADE HUB | WhatsApp: 01908631310</footer>
+
+<script>
+const products = [
+{
+slug:"browning-folding-knife",
+name:"Browning Folding Knife",
+price:"৳ 1,150",
+category:"folding",
+desc:`Blade Material: Stainless Steel
+Handle Material: Steel + G10
+Overall Length: 23 cm
+Blade Thickness: 3mm
+Weight: 190g
+Package: Box`,
+images:["browning main.png","browning 2.png","browning 3.png","browning 4.png"]
+},
+{
+slug:"browning-folding-knife-v2",
+name:"Browning Folding Knife v2",
+price:"৳ 1,550",
+category:"folding",
+desc:`Blade Material: Stainless Steel
+Handle Material: Steel + Aluminum
+Overall Length: 23 cm
+Blade Thickness: 3mm
+Weight: 265g
+Package: Box`,
+images:["v2 main.png","v2 2.png","v2 3.png","v2 4.png"]
+},
+{
+slug:"d2-steel-folding-knife-1",
+name:"D2 Steel Folding Knife",
+price:"৳ 2,350",
+category:"folding",
+desc:`Blade Material: D2 Steel
+Handle Material: Steel + G10
+Overall Length: 22.5 cm
+Blade Thickness: 4mm
+Weight: 170g
+Package: Box`,
+images:["d2 p main.png","d2 p 2.png","d2 p 3.png","d2 p 4.png"]
+},
+{
+slug:"lightweight-folding-knife",
+name:"Lightweight Folding Knife",
+price:"৳ 780",
+category:"folding",
+desc:`Blade Material: Stainless Steel
+Handle Material: Steel + ABS Plastic
+Overall Length: 22.8 cm
+Blade Thickness: 2mm
+Weight: 74g
+Package: Box`,
+images:["lightweight folding knife main.png","lightweight folding knife 2.png","lightweight folding knife 3.png","lightweight folding knife 4.png"]
+},
+{
+slug:"italian-folding-knife",
+name:"Italian Folding Knife",
+price:"৳ 1,350",
+category:"folding",
+desc:`Blade Material: Stainless Steel
+Handle Material: Steel + Wood/Resin
+Overall Length: 22.5 cm
+Blade Thickness: 3mm
+Weight: 165g
+Package: Box`,
+images:["italian folding knife main.png","italian folding knife 2.png","italian folding knife 3.png","italian folding knife 4.png"]
+},
+{
+slug:"scorpion-folding-knife",
+name:"Scorpion Folding Knife",
+price:"৳ 1,850",
+category:"folding",
+desc:`Blade Material: Stainless Steel
+Handle Material: Steel
+Overall Length: 22 cm
+Blade Thickness: 3mm
+Weight: 213g
+Package: Box`,
+images:["scorpion folding knife main.png","scorpion folding knife 2.png","scorpion folding knife 3.png","scorpion folding knife 4.png"]
+},
+{
+slug:"skull-printed-otf-knife",
+name:"Skull Printed OTF Knife",
+price:"৳ 950",
+category:"otf",
+desc:`Blade Material: Stainless Steel
+Handle Material: ABS Plastic
+Overall Length: 23.5 cm
+Blade Thickness: 2mm
+Weight: 85g
+Package: Box`,
+images:["otf c main.png","otf c 2.png","otf c 3.png","otf c 4.png"]
+},
+{
+slug:"d2-steel-folding-knife-2",
+name:"D2 Steel Folding Knife",
+price:"৳ 1,950",
+category:"folding",
+desc:`Blade Material: D2 Steel
+Handle Material: Steel + G10
+Overall Length: 22 cm
+Blade Thickness: 3.6mm
+Weight: 210g
+Package: Box`,
+images:["d2 cp main.png","d2 cp 2.png","d2 cp 3.png","d2 cp 4.png"]
+},
+{
+slug:"ak47-switchable-knife",
+name:"AK 47 Switchable Knife",
+price:"৳ 950",
+category:"switchable",
+desc:`Blade Material: Stainless Steel
+Handle Material: Steel + Wood
+Overall Length: 22 cm
+Blade Thickness: 2.8mm
+Weight: 153g
+Package: Box`,
+images:["c ak47 main.png","c ak47 2.png","c ak47 3.png","c ak47 4.png"]
+},
+{
+slug:"premium-otf-knife",
+name:"Premium OTF Knife",
+price:"৳ 1,350",
+category:"otf",
+desc:`Blade Material: Stainless Steel
+Handle Material: ABS Plastic
+Overall Length: 23 cm
+Blade Thickness: 2mm
+Weight: 78g
+Package: Box`,
+images:["otf knife main.png","otf knife 2.png","otf knife 3.png","otf knife 4.png"]
+},
+{
+slug:"buck-folding-knife",
+name:"Buck Folding Knife",
+price:"৳ 1,750",
+category:"folding",
+desc:`Blade Material: Stainless Steel
+Handle Material: Steel + Wood
+Overall Length: 21.5 cm
+Blade Thickness: 3.2mm
+Weight: 182g
+Package: Box`,
+images:["buck folding knife main.png","buck folding knife 2.png","buck folding knife 3.png","buck folding knife 4.png"]
+},
+{
+slug:"kalashnikov-folding-knife",
+name:"Kalashnikov Folding Knife",
+price:"৳ 1,450",
+category:"folding",
+desc:`Blade Material: Stainless Steel
+Handle Material: Steel + Aluminum
+Overall Length: 23 cm
+Blade Thickness: 3.2mm
+Weight: 190g
+Package: Box`,
+images:["Kalashnikov main.png","Kalashnikov 2.png","Kalashnikov 3.png","Kalashnikov 4.png"]
+},
+{
+slug:"premium-nepali-kukri",
+name:"Premium Nepali Kukri",
+price:"৳ 3,650",
+category:"fixed",
+desc:`Blade Material: D2 Steel
+Handle Material: Steel + Wood
+Overall Length: 31 cm
+Blade Thickness: 6mm
+Weight: 447g
+Package: Box`,
+images:["1kukri main.jpg","1kukri 2.jpg","1kukri 3.jpg","1kukri 4.jpg"]
+},
+{
+slug:"fixed-blade-knife",
+name:"Fixed Blade Knife",
+price:"৳ 850",
+category:"fixed",
+desc:`Blade Material: Stainless Steel
+Handle Material: Steel + G10
+Overall Length: 20 cm
+Blade Thickness: 3mm
+Weight: 110g
+Package: Box`,
+images:["fixed blade knife main.png","fixed blade knife 2.png","fixed blade knife 3.png","fixed blade knife 4.png"]
+},
+{
+slug:"m9-bayonet-knife",
+name:"M9 Bayonet Knife",
+price:"৳ 3,550",
+category:"fixed",
+desc:`Blade Material: D2 Steel
+Handle Material: Steel + G10
+Overall Length: 33 cm
+Blade Thickness: 6mm
+Weight: 395g
+Package: Box`,
+images:["m9 bayonet main.jpg","m9 bayonet 2.jpg","m9 bayonet 3.jpg","m9 bayonet 4.jpg"]
+}
+];
+
+const productContainer = document.getElementById("products");
+
+products.forEach(p=>{
+  productContainer.innerHTML += `
+  <div class="card" data-category="${p.category}" onclick="openProduct('${p.slug}')">
+    <img src="${p.images[0]}">
+    <div class="info">${p.name}<div class="price">${p.price}</div></div>
+  </div>`;
+});
+
+function openProduct(slug){
+  const p = products.find(x=>x.slug===slug);
+  if(!p) return;
+
+  document.getElementById("popup").style.display="block";
+  document.getElementById("productName").innerText=p.name;
+  document.getElementById("productPrice").innerText=p.price;
+  document.getElementById("productDesc").innerText=p.desc;
+  document.getElementById("mainImage").src=p.images[0];
+
+  document.getElementById("t1").src=p.images[0];
+  document.getElementById("t2").src=p.images[1];
+  document.getElementById("t3").src=p.images[2];
+  document.getElementById("t4").src=p.images[3];
+
+  document.getElementById("waBtn").href =
+  "https://wa.me/8801908631310?text=I want to order "+encodeURIComponent(p.name+" ("+p.price+")");
+
+  history.pushState({}, "", "?product="+slug);
+}
+
+window.onload = function(){
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get("product");
+  if(slug){ openProduct(slug); }
+}
+</script>
+
+</body>
+</html>}
 .menu a:last-child{border-bottom:none;}
 .menu a:hover{background:rgba(17,24,39,0.08);}
 
