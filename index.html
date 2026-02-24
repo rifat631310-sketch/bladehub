@@ -9,6 +9,14 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
 body{background:#0b0d10;color:#fff;overflow-x:hidden;}
 
+.home-btn{
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  display:none;
+}
+
 .hide-ui{display:none !important;}
 
 header{
@@ -290,6 +298,9 @@ footer{
 <header>
   <div class="topbar">
     <div class="menu-btn" id="menuBtn"><span></span></div>
+    
+    <div id="homeBtn" class="home-btn" onclick="goHome()">HOME</div>
+    
     <input class="search-input" id="searchInput" type="text" placeholder="Search knives...">
   </div>
 
@@ -407,6 +418,7 @@ onclick="openProduct('M9 Bayonet Knife','৳ 3,550','Blade Material: D2 Steel\nH
 
 <script>
 const popup = document.getElementById("popup");
+const homeBtn = document.getElementById("homeBtn");
 const productName = document.getElementById("productName");
 const productPrice = document.getElementById("productPrice");
 const productDesc = document.getElementById("productDesc");
@@ -451,12 +463,18 @@ searchInput.addEventListener("input", ()=>{
     card.style.display = title.includes(q) ? "block" : "none";
   });
 });
+menuBtn.classList.remove("hide-ui");
+searchInput.classList.remove("hide-ui");
+homeBtn.style.display="none";
 
 let currentProduct = null;
 
 function openProduct(name, price, desc, img1, img2, img3, img4, index){
   popup.style.display="block";
   document.body.style.overflow="hidden";
+menuBtn.classList.add("hide-ui");
+searchInput.classList.add("hide-ui");
+homeBtn.style.display="block";
 
   productName.innerText=name;
   productPrice.innerText=price;
@@ -492,9 +510,13 @@ window.addEventListener("popstate", function(event){
       card.click();
     }
   }else{
-    popup.style.display="none";
-    document.body.style.overflow="auto";
-  }
+  popup.style.display="none";
+  document.body.style.overflow="auto";
+
+  menuBtn.classList.remove("hide-ui");
+  searchInput.classList.remove("hide-ui");
+  homeBtn.style.display="none";
+}
 });
 
 window.addEventListener("load", function(){
@@ -507,6 +529,15 @@ window.addEventListener("load", function(){
     }
   }
 });
+function goHome(){
+  popup.style.display="none";
+  document.body.style.overflow="auto";
+  history.pushState({}, "", window.location.pathname);
+
+  menuBtn.classList.remove("hide-ui");
+  searchInput.classList.remove("hide-ui");
+  homeBtn.style.display="none";
+}
 </script>
 
 </body>
