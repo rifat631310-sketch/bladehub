@@ -371,6 +371,7 @@ searchInput.addEventListener("input", ()=>{
 
 function openProduct(name, price, desc, img1, img2, img3, img4){
   popup.style.display="block";
+  document.body.style.overflow = "hidden";
   topbar.classList.add("hide-ui");
   menu.classList.add("hide-ui");
 
@@ -395,6 +396,7 @@ function changeImage(src){
 window.addEventListener("popstate", function(event){
   if(popup.style.display==="block"){
     popup.style.display="none";
+    document.body.style.overflow = "auto";
     topbar.classList.remove("hide-ui");
     menu.classList.remove("hide-ui");
   }
