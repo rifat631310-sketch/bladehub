@@ -367,7 +367,6 @@ searchInput.addEventListener("input", ()=>{
   });
 });
 
-// ===== OPEN PRODUCT (HISTORY PUSH) =====
 function openProduct(slug, name, price, desc, img1, img2, img3, img4){
 
   popup.style.display="block";
@@ -387,39 +386,43 @@ function openProduct(slug, name, price, desc, img1, img2, img3, img4){
 
   waBtn.href="https://wa.me/8801908631310?text=I want to order "+encodeURIComponent(name+" ("+price+")");
 
-  history.pushState({product:true}, "", "?product="+slug);
+window.location.hash = slug;
 }
 
+function changeImage(src){
+  mainImage.src=src;
+}
 
-// ===== BACK BUTTON HANDLE =====
-window.addEventListener("popstate", function(event){
+window.addEventListener("hashchange", function(){
 
-  if(event.state && event.state.product){
-    // do nothing (already open)
-  } else {
-    popup.style.display="none";
-    document.body.style.overflow = "auto";
-    topbar.classList.remove("hide-ui");
-    menu.classList.remove("hide-ui");
-  }
+  if(window.location.hash){
 
-});
-
-
-// ===== DIRECT LINK OPEN =====
-window.addEventListener("load", function(){
-
-  const params = new URLSearchParams(window.location.search);
-  const slug = params.get("product");
-
-  if(slug){
+    const slug = window.location.hash.replace("#","");
     const card = document.querySelector('[onclick*="'+slug+'"]');
     if(card){
       const onclickText = card.getAttribute("onclick");
       eval(onclickText);
     }
-  }
 
+  }else{
+
+    popup.style.display="none";
+    document.body.style.overflow = "auto";
+    topbar.classList.remove("hide-ui");
+    menu.classList.remove("hide-ui");
+
+  }
+});
+
+window.addEventListener("load", function(){
+  const hash = window.location.hash.replace("#","");
+  if(hash){
+    const card = document.querySelector('[onclick*="'+hash+'"]');
+    if(card){
+      const onclickText = card.getAttribute("onclick");
+      eval(onclickText);
+    }
+  }
 });
 
 </script>
