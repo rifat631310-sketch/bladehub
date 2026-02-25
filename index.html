@@ -233,7 +233,7 @@ onclick="openProduct('browning-folding-knife','Browning Folding Knife','৳ 1,15
 
 <!-- 2 -->
 <div class="card" data-category="folding"
-onclick="openProduct('browning-foldig-knife-v2','Browning Folding Knife v2','৳ 1,550','Blade Material: Stainless Steel\nHandle Material: Steel + Aluminum\nOverall Length: 23 cm\nBlade Thickness: 3mm\nWeight: 265g\nPackage: Box','v2 main.png','v2 2.png','v2 3.png','v2 4.png')">
+onclick="openProduct('browning-folding-knife-v2','Browning Folding Knife v2','৳ 1,550','Blade Material: Stainless Steel\nHandle Material: Steel + Aluminum\nOverall Length: 23 cm\nBlade Thickness: 3mm\nWeight: 265g\nPackage: Box','v2 main.png','v2 2.png','v2 3.png','v2 4.png')">
 <img src="v2 main.png"><div class="info">Browning Folding Knife v2<div class="price">৳ 1,550</div></div></div>
 
 <!-- 3 -->
@@ -388,6 +388,7 @@ function openProduct(slug, name, price, desc, img1, img2, img3, img4){
 
   waBtn.href="https://wa.me/8801908631310?text=I want to order "+encodeURIComponent(name+" ("+price+")");
 
+window.location.hash = slug;
   history.pushState({product:slug},"","#"+slug);
 }
 
@@ -395,15 +396,13 @@ function changeImage(src){
   mainImage.src=src;
 }
 
-window.addEventListener("popstate", function(event){
-  if(window.location.hash){
-    return;
+window.addEventListener("hashchange", function(){
+  if(!window.location.hash){
+    popup.style.display="none";
+    document.body.style.overflow = "auto";
+    topbar.classList.remove("hide-ui");
+    menu.classList.remove("hide-ui");
   }
-
-  popup.style.display="none";
-  document.body.style.overflow = "auto";
-  topbar.classList.remove("hide-ui");
-  menu.classList.remove("hide-ui");
 });
 
 window.addEventListener("load", function(){
