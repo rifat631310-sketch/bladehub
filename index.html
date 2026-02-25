@@ -386,9 +386,10 @@ function openProduct(slug, name, price, desc, img1, img2, img3, img4){
 
   waBtn.href="https://wa.me/8801908631310?text=I want to order "+encodeURIComponent(name+" ("+price+")");
 
-window.location.hash = slug;
+if(window.location.hash.replace("#","") !== slug){
+  window.location.hash = slug;
+ }
 }
-
 function changeImage(src){
   mainImage.src=src;
 }
