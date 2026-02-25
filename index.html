@@ -146,8 +146,6 @@ header{
 .card .info{padding:5px 7px;font-size:13px;line-height:1.2;}
 .price{color:#eab308;font-size:16px;font-weight:bold;margin:3px 0 0 0;}
 
-#productName{
-  margin-top:60px;
 }
 .popup{
   display:none;
@@ -238,7 +236,7 @@ onclick="openProduct('browning-folding-knife-v2','Browning Folding Knife v2','�
 
 <!-- 3 -->
 <div class="card" data-category="folding"
-onclick="openProduct('begg-todd-folding-knife','Begg Todd Folding Knife','৳ 2,350','Blade Material: D2 Steel\nHandle Material: Steel + G10\nOverall Length: 22.5 cm\nBlade Thickness: 4mm\nWeight: 170g\nPackage: Box','d2 p main.png','d2 p 2.png','d2 p 3.png','d2 p 4.png')">
+onclick="openProduct('todd-begg-folding-knife','Todd Begg Folding Knife','৳ 2,350','Blade Material: D2 Steel\nHandle Material: Steel + G10\nOverall Length: 22.5 cm\nBlade Thickness: 4mm\nWeight: 170g\nPackage: Box','d2 p main.png','d2 p 2.png','d2 p 3.png','d2 p 4.png')">
 <img src="d2 p main.png"><div class="info">Begg Todd Folding Knife<div class="price">৳ 2,350</div></div></div>
 
 <!-- 4 -->
@@ -389,7 +387,6 @@ function openProduct(slug, name, price, desc, img1, img2, img3, img4){
   waBtn.href="https://wa.me/8801908631310?text=I want to order "+encodeURIComponent(name+" ("+price+")");
 
 window.location.hash = slug;
-  history.pushState({product:slug},"","#"+slug);
 }
 
 function changeImage(src){
