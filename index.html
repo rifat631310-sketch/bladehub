@@ -29,7 +29,7 @@ header{
   align-items:center;
   justify-content:space-between;
   gap:10px;
-  z-index:20000;
+  z-index:40000;
 
   background:linear-gradient(#111827);
   padding:10px 9px;
@@ -101,7 +101,7 @@ header{
   overflow:auto;
   display:none;
   box-shadow:0 10px 30px rgba(0,0,0,0.55);
-  z-index:99999;
+  z-index:50000;
   max-height:240px;
 }
 
@@ -175,7 +175,7 @@ header{
   background:rgba(0,0,0,0.95);
   padding:10px;
   overflow:auto;
-  z-index:10000;
+  z-index:30000;
   padding-top:58px;
 }
 .popup-content{max-width:500px;margin:auto;}
@@ -399,6 +399,7 @@ searchInput.addEventListener("input", ()=>{
 function openProduct(slug, name, price, desc, img1, img2, img3, img4){
 
   popup.style.display="block";
+  document.body.style.overflow="hidden";
 
   productName.innerText=name;
   productPrice.innerText=price;
@@ -432,7 +433,8 @@ window.addEventListener("hashchange", function(){
 
   }else{
 
-    popup.style.display="none";
+  popup.style.display="none";
+  document.body.style.overflow="auto";
 
   }
 });
@@ -451,4 +453,4 @@ window.addEventListener("load", function(){
 </script>
 
 </body>
-  </html>
+</html>
