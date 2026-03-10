@@ -215,7 +215,27 @@ footer{
   font-size:13px;
   color:#aaa;
 }
+.out-stock{
+  position:relative;
+}
 
+.out-stock img{
+  opacity:0.50;
+}
+
+.out-stock::after{
+  content:"Out of stock";
+  position:absolute;
+  top:42%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:#ffffff;
+  font-size:17px;
+  font-weight:390;
+  white-space:nowrap;
+  letter-spacing:1px;
+  pointer-events:none;
+}
 </style>
 </head>
 
@@ -254,7 +274,7 @@ onclick="openProduct('browning-folding-knife','Browning Folding Knife','৳ 1,15
 <img src="browning main.png"><div class="info">Browning Folding Knife<div class="price">৳ 1,150</div></div></div>
 
 <!-- 2 -->
-<div class="card" data-category="folding"
+<div class="card out-stock" data-category="folding"
 onclick="openProduct('browning-folding-knife-v2','Browning Folding Knife v2','৳ 1,550','Blade Material: Stainless Steel\nHandle Material: Steel + Aluminum\nOverall Length: 23 cm\nBlade Thickness: 3mm\nWeight: 265g\nPackage: Box','v2 main.png','v2 2.png','v2 3.png','v2 4.png')">
 <img src="v2 main.png"><div class="info">Browning Folding Knife v2<div class="price">৳ 1,550</div></div></div>
 
@@ -309,7 +329,7 @@ onclick="openProduct('kalashnikov-folding-knife','Kalashnikov Folding Knife','�
 <img src="Kalashnikov main.png"><div class="info">Kalashnikov Folding Knife<div class="price">৳ 1,450</div></div></div>
 
 <!-- 13 -->
-<div class="card" data-category="fixed"
+<div class="card out-stock" data-category="fixed"
 onclick="openProduct('premium-nepali-kukri','Premium Nepali Kukri','৳ 3,650','Blade Material: D2 Steel\nHandle Material: Steel + Wood\nOverall Length: 31 cm\nBlade Thickness: 6mm\nWeight: 447g\nPackage: Box','1kukri main.jpg','1kukri 2.jpg','1kukri 3.jpg','1kukri 4.jpg')">
 <img src="1kukri main.jpg"><div class="info">Premium Nepali Kukri<div class="price">৳ 3,650</div></div></div>
 
