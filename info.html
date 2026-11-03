@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -172,23 +173,19 @@ main{
   margin-bottom:18px;
 }
 
-/* English Letter Spacing */
 html[lang="en"] .page-label{
   letter-spacing:2px;
 }
 
-/* Bengali Letter Spacing */
 html[lang="bn"] .page-label{
   letter-spacing:0;
 }
 
-/* English Label Size */
 html[lang="en"] .page-label{
   font-size:16px;
   padding:9px 22px;
 }
 
-/* Bengali Label Size */
 html[lang="bn"] .page-label{
   font-size:20px;
   padding:9px 22px;
@@ -232,18 +229,20 @@ html[lang="bn"] .page-label{
   border-bottom:1px solid var(--border);
 }
 
+/* SECTION NUMBER BOX - UPDATED */
+
 .section-number{
-  width:39px;
-  height:39px;
-  min-width:39px;
+  width:44px;
+  height:44px;
+  min-width:44px;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:rgba(234,179,8,.10);
-  border:1px solid rgba(234,179,8,.35);
-  border-radius:10px;
+  background:rgba(234,179,8,.12);
+  border:1px solid rgba(234,179,8,.45);
+  border-radius:11px;
   color:var(--gold);
-  font-size:15px;
+  font-size:23px;
   font-weight:800;
 }
 
@@ -256,7 +255,7 @@ html[lang="bn"] .page-label{
 .section-heading small{
   display:block;
   color:var(--subtle);
-  font-size:11px;
+  font-size:13px;
   font-weight:500;
   margin-top:3px;
 }
@@ -294,8 +293,14 @@ html[lang="bn"] .page-label{
 
 .info-note p{
   color:#e5e7eb;
-  font-size:13px;
+  font-size:12px;
   line-height:1.8;
+}
+
+/* DELIVERY NOTE - ONLY THIS NOTE SMALLER */
+
+.delivery-note p{
+  font-size:12px;
 }
 
 /* DELIVERY DETAILS */
@@ -386,22 +391,22 @@ footer{
   }
 
   .brand{
-    font-size:17px;
-    letter-spacing:1px;
+    font-size:25px;
+    letter-spacing:2px;
   }
 
   .header-actions{
-    gap:7px;
+    gap:8px;
   }
 
   .lang-btn{
     padding:6px 9px;
-    font-size:12px;
+    font-size:11px;
   }
 
   .back-btn{
     padding:7px 9px;
-    font-size:12px;
+    font-size:11px;
   }
 
   main{
@@ -433,15 +438,15 @@ footer{
   }
 
   .section-heading h2{
-    font-size:17px;
+    font-size:20px;
   }
 
   .policy-block h3{
-    font-size:14px;
+    font-size:18px;
   }
 
   .policy-block p{
-    font-size:13px;
+    font-size:15px;
   }
 
   .delivery-details{
@@ -453,7 +458,7 @@ footer{
   }
 
   .detail-card strong{
-    font-size:17px;
+    font-size:19px;
   }
 
   footer{
@@ -467,12 +472,13 @@ footer{
 }
 
 @media(max-width:360px){
+
   .brand{
-    font-size:15px;
+    font-size:17px;
   }
 
   .back-btn{
-    font-size:11px;
+    font-size:13px;
     padding:6px 7px;
   }
 
@@ -728,10 +734,10 @@ footer{
       </p>
 
 
-      <div class="info-note">
-        <p>
-          <span data-en="Please note that delivery times are estimates and may vary due to shipping, customs clearance, or other unforeseen circumstances."
-                data-bn="অনুগ্রহ করে মনে রাখবেন, উল্লেখিত সময়সীমা আনুমানিক। শিপিং, কাস্টমস ক্লিয়ারেন্স অথবা অনাকাঙ্ক্ষিত পরিস্থিতির কারণে সময় কিছুটা কম-বেশি হতে পারে।">
+      <div class="info-note delivery-note">
+  <p style="font-size:12px !important;">
+    <span data-en="Please note that delivery times are estimates and may vary due to shipping, customs clearance, or other unforeseen circumstances."
+          data-bn="অনুগ্রহ করে মনে রাখবেন, উল্লেখিত সময়সীমা আনুমানিক। শিপিং, কাস্টমস ক্লিয়ারেন্স অথবা অনাকাঙ্ক্ষিত পরিস্থিতির কারণে সময় কিছুটা কম-বেশি হতে পারে।">
             Please note that delivery times are estimates and may vary due to shipping, customs clearance, or other unforeseen circumstances.
           </span>
         </p>
