@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#0b0d10">
+<meta name="description" content="Read BLADE HUB BD's customer guidelines, age requirements, product usage policy, pre-order terms, payment conditions, delivery estimates and restock updates.">
+
+<title>Customer Guidelines | BLADE HUB BD</title>
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<style>
+:root{
+  --bg:#0b0d10;
+  --surface:#111827;
+  --surface-2:#0d1420;
+  --gold:#eab308;
+  --gold-light:#facc15;
+  --text:#f5f5f5;
+  --muted:#cbd5e1;
+  --subtle:#9ca3af;
+  --border:#263244;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{
+  text-decoration:none;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(17,24,39,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+  max-width:1100px;
+  margin:auto;
+  min-height:68px;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.brand{
+  color:#fff;
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:2px;
+  white-space:nowrap;
+}
+
+.brand span{
+  color:var(--gold);
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* LANGUAGE SWITCHER */
+
+.lang-toggle{
+  display:flex;
+  align-items:center;
+  gap:3px;
+  padding:4px;
+  border:1px solid #374151;
+  border-radius:9px;
+  background:#0b0d10;
+}
+
+.lang-btn{
+  border:0;
+  outline:none;
+  background:transparent;
+  color:#cbd5e1;
+  padding:7px 12px;
+  border-radius:6px;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.lang-btn.active{
+  background:var(--gold);
+  color:#111827;
+}
+
+.lang-btn:focus-visible,
+.back-btn:focus-visible,
+a:focus-visible{
+  outline:2px solid white;
+  outline-offset:3px;
+}
+
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color:var(--gold);
+  border:1px solid #4b5563;
+  padding:7px 13px;
+  border-radius:8px;
+  font-size:13px;
+  font-weight:600;
+  white-space:nowrap;
+  transition:.2s;
+}
+
+.back-btn:hover{
+  background:var(--gold);
+  color:#111827;
+  border-color:var(--gold);
+}
+
+/* MAIN */
+
+main{
+  width:min(850px,100%);
+  margin:auto;
+  padding:35px 20px 55px;
+}
+
+/* PAGE INTRO */
+
+.page-intro{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.page-label{
+  display:inline-block;
+  color:var(--gold);
+  border:1px solid rgba(234,179,8,.35);
+  background:rgba(234,179,8,.07);
+  padding:9px 22px;
+  border-radius:30px;
+  font-size:16px;
+  font-weight:800;
+  letter-spacing:0;
+  margin-bottom:18px;
+}
+
+/* English Letter Spacing */
+html[lang="en"] .page-label{
+  letter-spacing:2px;
+}
+
+/* Bengali Letter Spacing */
+html[lang="bn"] .page-label{
+  letter-spacing:0;
+}
+
+/* English Label Size */
+html[lang="en"] .page-label{
+  font-size:16px;
+  padding:9px 22px;
+}
+
+/* Bengali Label Size */
+html[lang="bn"] .page-label{
+  font-size:20px;
+  padding:9px 22px;
+}
+
+.page-intro h1{
+  font-size:30px;
+  line-height:1.35;
+  margin-bottom:10px;
+  font-weight:800;
+}
+
+.page-intro h1 span{
+  color:var(--gold);
+}
+
+.page-intro p{
+  color:var(--subtle);
+  font-size:14px;
+  max-width:590px;
+  margin:auto;
+}
+
+/* SECTION */
+
+.policy-section{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:24px;
+  margin-bottom:22px;
+  scroll-margin-top:90px;
+}
+
+.section-heading{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding-bottom:17px;
+  margin-bottom:18px;
+  border-bottom:1px solid var(--border);
+}
+
+.section-number{
+  width:39px;
+  height:39px;
+  min-width:39px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(234,179,8,.10);
+  border:1px solid rgba(234,179,8,.35);
+  border-radius:10px;
+  color:var(--gold);
+  font-size:15px;
+  font-weight:800;
+}
+
+.section-heading h2{
+  font-size:19px;
+  line-height:1.4;
+  font-weight:700;
+}
+
+.section-heading small{
+  display:block;
+  color:var(--subtle);
+  font-size:11px;
+  font-weight:500;
+  margin-top:3px;
+}
+
+.policy-block{
+  margin-bottom:19px;
+}
+
+.policy-block:last-child{
+  margin-bottom:0;
+}
+
+.policy-block h3{
+  color:var(--gold);
+  font-size:15px;
+  margin-bottom:6px;
+  font-weight:700;
+}
+
+.policy-block p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.85;
+}
+
+/* INFORMATION NOTE */
+
+.info-note{
+  background:var(--surface-2);
+  border-left:3px solid var(--gold);
+  border-radius:0 9px 9px 0;
+  padding:13px 15px;
+  margin-top:18px;
+}
+
+.info-note p{
+  color:#e5e7eb;
+  font-size:13px;
+  line-height:1.8;
+}
+
+/* DELIVERY DETAILS */
+
+.delivery-details{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:14px;
+}
+
+.detail-card{
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:15px;
+}
+
+.detail-card .detail-label{
+  display:block;
+  color:var(--subtle);
+  font-size:12px;
+  margin-bottom:5px;
+}
+
+.detail-card strong{
+  color:var(--gold);
+  font-size:19px;
+  display:block;
+}
+
+.detail-card small{
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* FACEBOOK FOOTER */
+
+footer{
+  background:#050607;
+  border-top:1px solid #202733;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:25px 15px;
+}
+
+.facebook-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  color:var(--gold);
+  font-size:14px;
+  font-weight:700;
+  padding:12px 20px;
+  border:1px solid rgba(234,179,8,.35);
+  border-radius:10px;
+  background:rgba(234,179,8,.06);
+  transition:background .2s,color .2s,border-color .2s;
+}
+
+.facebook-link:hover{
+  background:var(--gold);
+  color:#111827;
+  border-color:var(--gold);
+}
+
+.facebook-link svg{
+  width:19px;
+  height:19px;
+  flex-shrink:0;
+}
+
+.facebook-link:focus-visible{
+  outline:2px solid white;
+  outline-offset:3px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .header-inner{
+    padding:11px 12px;
+    min-height:62px;
+    gap:8px;
+  }
+
+  .brand{
+    font-size:17px;
+    letter-spacing:1px;
+  }
+
+  .header-actions{
+    gap:7px;
+  }
+
+  .lang-btn{
+    padding:6px 9px;
+    font-size:12px;
+  }
+
+  .back-btn{
+    padding:7px 9px;
+    font-size:12px;
+  }
+
+  main{
+    padding:27px 13px 40px;
+  }
+
+  .page-intro{
+    margin-bottom:25px;
+  }
+
+  .page-intro h1{
+    font-size:24px;
+  }
+
+  .page-intro p{
+    font-size:13px;
+  }
+
+  .policy-section{
+    padding:18px 15px;
+    margin-bottom:16px;
+    border-radius:12px;
+  }
+
+  .section-heading{
+    gap:11px;
+    padding-bottom:14px;
+    margin-bottom:15px;
+  }
+
+  .section-heading h2{
+    font-size:17px;
+  }
+
+  .policy-block h3{
+    font-size:14px;
+  }
+
+  .policy-block p{
+    font-size:13px;
+  }
+
+  .delivery-details{
+    gap:9px;
+  }
+
+  .detail-card{
+    padding:12px 10px;
+  }
+
+  .detail-card strong{
+    font-size:17px;
+  }
+
+  footer{
+    padding:22px 15px;
+  }
+
+  .facebook-link{
+    font-size:13px;
+    padding:11px 17px;
+  }
+}
+
+@media(max-width:360px){
+  .brand{
+    font-size:15px;
+  }
+
+  .back-btn{
+    font-size:11px;
+    padding:6px 7px;
+  }
+
+  .lang-btn{
+    padding:6px 7px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="header-inner">
+
+    <a href="index.html" class="brand">
+      BLADE <span>HUB</span>
+    </a>
+
+    <div class="header-actions">
+
+      <div class="lang-toggle" role="group" aria-label="Choose language">
+
+        <button class="lang-btn active"
+                type="button"
+                data-lang="en"
+                aria-pressed="true">
+          EN
+        </button>
+
+        <button class="lang-btn"
+                type="button"
+                data-lang="bn"
+                aria-pressed="false">
+          বাংলা
+        </button>
+
+      </div>
+
+      <a href="index.html" class="back-btn">
+        <span data-en="← Store"
+              data-bn="← দোকান">
+          ← Store
+        </span>
+      </a>
+
+    </div>
+  </div>
+</header>
+
+
+<main>
+
+  <!-- PAGE INTRO -->
+
+  <div class="page-intro">
+
+    <div class="page-label">
+      <span data-en="CUSTOMER GUIDELINES"
+            data-bn="ক্রেতাদের জন্য নির্দেশনা">
+        CUSTOMER GUIDELINES
+      </span>
+    </div>
+
+    <p>
+      <span data-en="Please read our important guidelines before placing your order."
+            data-bn="অর্ডার করার আগে অনুগ্রহ করে আমাদের গুরুত্বপূর্ণ নির্দেশনাগুলো পড়ে নিন।">
+        Please read our important guidelines before placing your order.
+      </span>
+    </p>
+
+  </div>
+
+
+  <!-- SECTION 01: AGE & USAGE -->
+
+  <section class="policy-section" id="age-restriction">
+
+    <div class="section-heading">
+
+      <div class="section-number">01</div>
+
+      <div>
+        <h2>
+          <span data-en="Age Restriction & Product Usage"
+                data-bn="বয়সসীমা ও পণ্যের ব্যবহার">
+            Age Restriction & Product Usage
+          </span>
+        </h2>
+
+        <small>
+          <span data-en="Eligibility and responsible use"
+                data-bn="ক্রয়ের যোগ্যতা ও দায়িত্বশীল ব্যবহার">
+            Eligibility and responsible use
+          </span>
+        </small>
+      </div>
+
+    </div>
+
+
+    <div class="policy-block">
+
+      <h3>
+        <span data-en="Minimum Age Requirement"
+              data-bn="ন্যূনতম বয়সসীমা">
+          Minimum Age Requirement
+        </span>
+      </h3>
+
+      <p>
+        <span data-en="Customers must be at least 20 years old to purchase any product from BLADE HUB. We do not accept orders from individuals under the age of 20. By placing an order, customers confirm that they meet this age requirement."
+              data-bn="BLADE HUB থেকে যেকোনো পণ্য ক্রয় করতে হলে ক্রেতার বয়স কমপক্ষে ২০ বছর হতে হবে। ২০ বছরের কম বয়সী কারও কাছ থেকে আমরা অর্ডার গ্রহণ করি না। অর্ডার করার মাধ্যমে ক্রেতা নিশ্চিত করছেন যে তিনি এই বয়সসীমার শর্ত পূরণ করেন।">
+          Customers must be at least 20 years old to purchase any product from BLADE HUB. We do not accept orders from individuals under the age of 20. By placing an order, customers confirm that they meet this age requirement.
+        </span>
+      </p>
+
+    </div>
+
+
+    <div class="policy-block">
+
+      <h3>
+        <span data-en="Intended Product Use"
+              data-bn="পণ্যের নির্ধারিত ব্যবহার">
+          Intended Product Use
+        </span>
+      </h3>
+
+      <p>
+        <span data-en="Our products are intended for lawful purposes such as camping, kitchen tasks, collecting, and other legitimate everyday needs, depending on the type of product."
+              data-bn="পণ্যের ধরন অনুযায়ী আমাদের পণ্যগুলো ক্যাম্পিং, রান্নাঘরের কাজ, সংগ্রহে রাখা এবং দৈনন্দিন অন্যান্য বৈধ প্রয়োজনে ব্যবহারের জন্য বিক্রি করা হয়।">
+          Our products are intended for lawful purposes such as camping, kitchen tasks, collecting, and other legitimate everyday needs, depending on the type of product.
+        </span>
+      </p>
+
+    </div>
+
+
+    <div class="policy-block">
+
+      <h3>
+        <span data-en="Customer Responsibility"
+              data-bn="ক্রেতার দায়িত্ব">
+          Customer Responsibility
+        </span>
+      </h3>
+
+      <p>
+        <span data-en="Customers must use all products responsibly and in accordance with applicable laws. Any illegal, harmful, or criminal use of our products is strictly prohibited. Customers are solely responsible for any misuse and its consequences under applicable law."
+              data-bn="ক্রেতাকে অবশ্যই সব পণ্য দায়িত্বশীলভাবে এবং প্রচলিত আইন মেনে ব্যবহার করতে হবে। আমাদের কোনো পণ্য অবৈধ, ক্ষতিকর বা অপরাধমূলক কাজে ব্যবহার করা সম্পূর্ণ নিষিদ্ধ। পণ্যের অপব্যবহার এবং এর ফলে সৃষ্ট পরিণতির জন্য প্রযোজ্য আইন অনুযায়ী ক্রেতা নিজেই দায়ী থাকবেন।">
+          Customers must use all products responsibly and in accordance with applicable laws. Any illegal, harmful, or criminal use of our products is strictly prohibited. Customers are solely responsible for any misuse and its consequences under applicable law.
+        </span>
+      </p>
+
+    </div>
+
+
+    <div class="info-note">
+      <p>
+        <span data-en="Always handle products carefully. Never use any product to threaten, injure, or harm another person."
+              data-bn="সবসময় পণ্য সতর্কতার সঙ্গে ব্যবহার করুন। কাউকে ভয় দেখানো, আঘাত করা বা ক্ষতি করার উদ্দেশ্যে কোনো পণ্য ব্যবহার করবেন না।">
+          Always handle products carefully. Never use any product to threaten, injure, or harm another person.
+        </span>
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- SECTION 02: PRE-ORDER -->
+
+  <section class="policy-section" id="pre-order">
+
+    <div class="section-heading">
+
+      <div class="section-number">02</div>
+
+      <div>
+        <h2>
+          <span data-en="Pre-order Policy"
+                data-bn="প্রি-অর্ডার নীতিমালা">
+            Pre-order Policy
+          </span>
+        </h2>
+
+        <small>
+          <span data-en="Ordering process, payment and delivery"
+                data-bn="অর্ডার প্রক্রিয়া, পেমেন্ট ও ডেলিভারি">
+            Ordering process, payment and delivery
+          </span>
+        </small>
+      </div>
+
+    </div>
+
+
+    <div class="policy-block">
+
+      <h3>
+        <span data-en="How to Place a Pre-order"
+              data-bn="যেভাবে প্রি-অর্ডার করবেন">
+          How to Place a Pre-order
+        </span>
+      </h3>
+
+      <p>
+        <span data-en="Even if your preferred knife model is currently out of stock, you can still pre-order it through BLADE HUB. Simply send us a clear picture of the desired knife or its model name. We will check its availability and provide you with the price and other necessary details."
+              data-bn="আপনার পছন্দের নির্দিষ্ট নাইফটি বর্তমানে স্টকে না থাকলেও BLADE HUB-এর মাধ্যমে প্রি-অর্ডার করে সংগ্রহ করতে পারবেন। এজন্য কাঙ্ক্ষিত নাইফটির একটি পরিষ্কার ছবি অথবা মডেলের নাম আমাদের পাঠিয়ে দিন। আমরা পণ্যটির প্রাপ্যতা যাচাই করে আপনাকে মূল্য ও অন্যান্য প্রয়োজনীয় তথ্য জানিয়ে দেব।">
+          Even if your preferred knife model is currently out of stock, you can still pre-order it through BLADE HUB. Simply send us a clear picture of the desired knife or its model name. We will check its availability and provide you with the price and other necessary details.
+        </span>
+      </p>
+
+    </div>
+
+
+    <div class="policy-block">
+
+      <h3>
+        <span data-en="Advance Payment"
+              data-bn="অগ্রিম পেমেন্ট">
+          Advance Payment
+        </span>
+      </h3>
+
+      <p>
+        <span data-en="A 50% advance payment of the total product price is required to confirm a pre-order. The remaining 50% can be paid once you receive the product."
+              data-bn="প্রি-অর্ডার নিশ্চিত করতে পণ্যের মোট দামের ৫০% টাকা অগ্রিম পরিশোধ করতে হবে। বাকি ৫০% টাকা পণ্যটি হাতে পাওয়ার পর পরিশোধ করতে পারবেন।">
+          A 50% advance payment of the total product price is required to confirm a pre-order. The remaining 50% can be paid once you receive the product.
+        </span>
+      </p>
+
+    </div>
+
+
+    <div class="policy-block">
+
+      <h3>
+        <span data-en="Estimated Delivery Time"
+              data-bn="সম্ভাব্য ডেলিভারি সময়">
+          Estimated Delivery Time
+        </span>
+      </h3>
+
+      <p>
+        <span data-en="After a pre-order is confirmed, the product generally takes 20–25 days to arrive in Bangladesh. Once it arrives, an additional 2–3 days are required for delivery to the customer."
+              data-bn="প্রি-অর্ডার নিশ্চিত হওয়ার পর পণ্যটি বাংলাদেশে পৌঁছাতে সাধারণত ২০–২৫ দিন সময় লাগে। পণ্যটি বাংলাদেশে পৌঁছানোর পর ক্রেতার কাছে ডেলিভারি দিতে আরও ২–৩ দিন সময় প্রয়োজন হয়।">
+          After a pre-order is confirmed, the product generally takes 20–25 days to arrive in Bangladesh. Once it arrives, an additional 2–3 days are required for delivery to the customer.
+        </span>
+      </p>
+
+
+      <div class="info-note">
+        <p>
+          <span data-en="Please note that delivery times are estimates and may vary due to shipping, customs clearance, or other unforeseen circumstances."
+                data-bn="অনুগ্রহ করে মনে রাখবেন, উল্লেখিত সময়সীমা আনুমানিক। শিপিং, কাস্টমস ক্লিয়ারেন্স অথবা অনাকাঙ্ক্ষিত পরিস্থিতির কারণে সময় কিছুটা কম-বেশি হতে পারে।">
+            Please note that delivery times are estimates and may vary due to shipping, customs clearance, or other unforeseen circumstances.
+          </span>
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SECTION 03: RESTOCK -->
+
+  <section class="policy-section" id="restock">
+
+    <div class="section-heading">
+
+      <div class="section-number">03</div>
+
+      <div>
+        <h2>
+          <span data-en="Product Restock Information"
+                data-bn="পুনরায় স্টকে আসার তথ্য">
+            Product Restock Information
+          </span>
+        </h2>
+
+        <small>
+          <span data-en="Availability and restocking updates"
+                data-bn="পণ্যের প্রাপ্যতা ও স্টক সংক্রান্ত আপডেট">
+            Availability and restocking updates
+          </span>
+        </small>
+      </div>
+
+    </div>
+
+
+    <div class="policy-block">
+
+      <h3>
+        <span data-en="Out of Stock Products"
+              data-bn="স্টকে না থাকা পণ্য">
+          Out of Stock Products
+        </span>
+      </h3>
+
+      <p>
+        <span data-en="Products marked as “Out of Stock” are generally expected to be restocked within 20–25 days. However, the actual restocking time may vary depending on product availability and shipping conditions."
+              data-bn="যেসব পণ্যের পাশে “Out of Stock” লেখা রয়েছে, সেগুলো সাধারণত ২০–২৫ দিনের মধ্যে পুনরায় স্টকে আসার সম্ভাবনা রয়েছে। তবে পণ্যের প্রাপ্যতা ও শিপিং পরিস্থিতির ওপর নির্ভর করে স্টকে ফেরার সময় কম-বেশি হতে পারে।">
+          Products marked as “Out of Stock” are generally expected to be restocked within 20–25 days. However, the actual restocking time may vary depending on product availability and shipping conditions.
+        </span>
+      </p>
+
+    </div>
+
+
+    <div class="policy-block">
+
+      <h3>
+        <span data-en="Restock Updates"
+              data-bn="স্টক আপডেট">
+          Restock Updates
+        </span>
+      </h3>
+
+      <p>
+        <span data-en="Once an out-of-stock product becomes available again, its availability status will be updated on our website. Please visit our website regularly to check the latest product availability."
+              data-bn="স্টকে না থাকা কোনো পণ্য পুনরায় পাওয়া গেলে আমাদের ওয়েবসাইটে সেটির স্ট্যাটাস আপডেট করা হবে। পণ্যের সর্বশেষ প্রাপ্যতা জানতে নিয়মিত আমাদের ওয়েবসাইট ভিজিট করুন।">
+          Once an out-of-stock product becomes available again, its availability status will be updated on our website. Please visit our website regularly to check the latest product availability.
+        </span>
+      </p>
+
+    </div>
+
+
+    <div class="info-note">
+      <p>
+        <span data-en="Restocking within 20–25 days is an estimated timeframe, not a guaranteed date."
+              data-bn="২০–২৫ দিনের মধ্যে পুনরায় স্টকে আসার সময়সীমাটি আনুমানিক, এটি কোনো নিশ্চিত তারিখ নয়।">
+          Restocking within 20–25 days is an estimated timeframe, not a guaranteed date.
+        </span>
+      </p>
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER: FACEBOOK PAGE -->
+
+<footer>
+
+  <a
+    href="https://www.facebook.com/share/19cZY2GTH7/"
+    class="facebook-link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Visit our Facebook page"
+  >
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078V12.073h3.047V9.356c0-3.026 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.975h-1.514c-1.491 0-1.955.93-1.955 1.885v2.318h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+    </svg>
+
+    <span>Visit Our Facebook Page</span>
+
+  </a>
+
+</footer>
+
+
+<!-- LANGUAGE SCRIPT -->
+
+<script>
+(function(){
+
+  const buttons = document.querySelectorAll('.lang-btn');
+
+  const translatable = document.querySelectorAll('[data-en][data-bn]');
+
+  const storageKey = 'bladeHubInfoLanguage';
+
+  function setLanguage(lang){
+
+    lang = lang === 'bn' ? 'bn' : 'en';
+
+    document.documentElement.lang = lang;
+
+    translatable.forEach(function(element){
+
+      element.textContent = element.getAttribute('data-' + lang);
+
+    });
+
+    buttons.forEach(function(button){
+
+      const isActive = button.getAttribute('data-lang') === lang;
+
+      button.classList.toggle('active',isActive);
+
+      button.setAttribute(
+        'aria-pressed',
+        isActive ? 'true' : 'false'
+      );
+
+    });
+
+    try{
+
+      localStorage.setItem(storageKey,lang);
+
+    }catch(error){
+
+      // Language switching will still work without localStorage.
+
+    }
+
+  }
+
+
+  buttons.forEach(function(button){
+
+    button.addEventListener('click',function(){
+
+      setLanguage(button.getAttribute('data-lang'));
+
+    });
+
+  });
+
+
+  let savedLanguage = 'en';
+
+  try{
+
+    savedLanguage = localStorage.getItem(storageKey) || 'en';
+
+  }catch(error){
+
+    savedLanguage = 'en';
+
+  }
+
+  setLanguage(savedLanguage);
+
+})();
+</script>
+
+</body>
+</html>
